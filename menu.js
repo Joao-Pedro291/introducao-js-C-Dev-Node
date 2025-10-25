@@ -7,6 +7,7 @@ let prompt = PromptSync();
 // class é um modelo de um objeto
 class Pessoa {
 
+
     //atributo privado
     #senha;
 
@@ -24,7 +25,19 @@ class Pessoa {
     }
 
     get senha() {
-        console.log(`Sua senha é ${this.#senha}`)
+        let verSenha = prompt("Digite 1 se quiser ver sua senha: ")
+
+        if (verSenha == 1) {
+
+            let perguntaSenha = prompt("Qual sua data de nascimento? ")
+
+            if (perguntaSenha == dataNascPessoa) {
+                console.log(`Sua senha é ${this.#senha}`)
+            } else {
+                console.log("Data de nascimento incorreta")
+            }
+        }
+
     }
 
 }
@@ -48,18 +61,9 @@ const novaPessoa = new Pessoa(
 //aciona a função do objeto ja criado
 novaPessoa.apresentar();
 
-let verSenha = prompt("Digite 1 se quiser ver sua senha: ")
 
-if (verSenha == 1) {
-
-    let perguntaSenha = prompt("Qual sua data de nascimento? ")
-
-    if (perguntaSenha == dataNascPessoa) {
-        console.log(`Sua senha é ${senhaPessoa}`)
-    } else {
-        console.log("Data de nascimento incorreta")
-    }
-}
 
 //exibir todo o objeto
 console.log(novaPessoa);
+
+novaPessoa.senha;
