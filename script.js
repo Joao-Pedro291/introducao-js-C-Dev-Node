@@ -1,1 +1,0 @@
-console.log("Hello world e Olá mundo");
